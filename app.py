@@ -28,6 +28,7 @@ def favorite_dessert(users_dessert):
 def madlibs(adjective, noun):
     return f"You are a {adjective} {noun}."
 
+# Multiply 2 integers
 @app.route('/multiply/<number1>/<number2>')
 def multiply(number1, number2):
     if (number1.isdigit() == False):
@@ -39,6 +40,7 @@ def multiply(number1, number2):
         num2 = int(number2)
         return f"{number1} times {number2} is {num1 * num2}."
 
+# Print string multiple times
 @app.route('/sayntimes/<word>/<n>')
 def sayntimes(word, n):
     if (n.isdigit() == False):
@@ -50,6 +52,7 @@ def sayntimes(word, n):
             new_string += (word + " ")
         return new_string
 
+# Reverse the string
 @app.route('/reverse/<word>')
 def reverse(word):
     reversed_string = ""
@@ -58,6 +61,7 @@ def reverse(word):
         reversed_string += word[i-1]
     return reversed_string
 
+# Capitalize every other letter in string
 @app.route('/strangecaps/<word>')
 def strangecaps(word):
     new_string = ""
@@ -70,6 +74,7 @@ def strangecaps(word):
         i += 1
     return new_string
 
+# Dice Game
 @app.route('/dicegame')
 def dicegame():
     rolled_number = randint(1, 6)
